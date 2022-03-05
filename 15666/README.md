@@ -1,6 +1,6 @@
 # 백준 15663 N과 M (9)
 
-[BOJ 15663](https://www.acmicpc.net/problem/15666){:target="\_blank"}
+<a href="https://www.acmicpc.net/problem/15666" target="_blank">BOJ 15666</a>
 
 <br/>
 
