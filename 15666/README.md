@@ -1,4 +1,4 @@
-# 백준 15663 N과 M (9)
+# 백준 15666 N과 M (12)
 
 <a href="https://www.acmicpc.net/problem/15666" target="_blank">BOJ 15666</a>
 
