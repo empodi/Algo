@@ -1,6 +1,6 @@
 # 백준 1922 네트워크 연결
 
-[BOJ 15663](https://www.acmicpc.net/problem/1922)
+[BOJ 1922](https://www.acmicpc.net/problem/1922)
 
 어렵네
 <br/>
