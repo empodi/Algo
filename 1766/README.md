@@ -1,4 +1,4 @@
-# 백준 1766 소수 찾기
+# 백준 1766 문제집
 
 [BOJ 1766](https://www.acmicpc.net/problem/1766)
 
