@@ -3,3 +3,5 @@
 [BOJ 1946](https://www.acmicpc.net/problem/1946)
 
 ## 그리디
+
+### 실버 1
