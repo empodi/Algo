@@ -10,7 +10,7 @@ searching = [False for _ in range(N+1)]
 ans, tmp, target = [], [], 0
 
 def dfs(cur):
-    global target, flag
+    global target
     if cur == target:
         return True
     if done[cur] or searching[cur]:
