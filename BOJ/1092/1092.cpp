@@ -1,25 +1,34 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
+#define MAX 50
 using namespace std;
 
 int N, M;
-vector<int> cList;
-vector<int> bList;
+int A[MAX + 10];
+vector<int> v;
+
+void init() {
+    cin >> N;
+    for (int i = 0; i < N; i++) cin >> A[i];
+    cin >> M;
+    v.resize(M);
+    for (int i = 0; i < M; i++) cin >> v[i];
+    sort(A, A + N);
+    sort(v.begin(), v.end());
+}
 
 int solve() {
-    if (bList[0] > cList[0]) return -1;
-    int ret = 0, cnt = 0;
-    while (cnt < M) {
-        int cIdx = 0;
-        for (int i = 0; i < M && cIdx < N; i++) {
-            if (bList[i] == 0) continue;
-            if (bList[i] <= cList[cIdx]) {
-                bList[i] = 0;
-                cnt++;
-                cIdx++;
-            }
+    if (A[N - 1] < v.back()) return -1;
+    int ret = 1;
+    while (true) {
+        for (int i = 0; i < N && !v.empty(); i++) {
+            int idx = lower_bound(v.begin(), v.end(), A[i]) - v.begin();
+            if (idx < v.size() && v[idx] == A[i]) v.erase(v.begin() + idx);
+            else if (idx > 0 && v[idx - 1] <= A[i]) v.erase(v.begin() + idx - 1);
         }
+//        for (auto & e : v) cout << e << ' '; cout << '\n';
+        if (v.empty()) break;
         ret++;
     }
     return ret;
@@ -27,14 +36,7 @@ int solve() {
 
 int main() {
     ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-    cin >> N;
-    cList.resize(N);
-    for (int i = 0; i < N; i++) cin >> cList[i];
-    cin >> M;
-    bList.resize(M);
-    for (int i = 0; i < M; i++) cin >> bList[i];
-    sort(cList.begin(), cList.end(), greater<>());
-    sort(bList.begin(), bList.end(), greater<>());
+    init();
     cout << solve() << '\n';
     return 0;
 }
