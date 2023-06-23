@@ -1,20 +1,20 @@
 func gogo(cands []int, target int, sum int, cur []int, idx int, ret *[][]int) {
 	if sum > target {
-			return
+		return
 	}
 	if target == sum {
-			var curCopy []int
-			for _, n := range cur {
-					curCopy = append(curCopy, n)
-			}
-			*ret = append(*ret, curCopy)
-			// fmt.Println(cur)
-			return
+		var curCopy []int
+		for _, n := range cur {
+			curCopy = append(curCopy, n)
+		}
+		*ret = append(*ret, curCopy)
+		// fmt.Println(cur)
+		return
 	}
 	for i := idx; i < len(cands); i++ {
-			cur = append(cur, cands[i])
-			gogo(cands, target, sum + cands[i], cur, i, ret)
-			cur = cur[:len(cur) - 1]
+		cur = append(cur, cands[i])
+		gogo(cands, target, sum + cands[i], cur, i, ret)
+		cur = cur[:len(cur) - 1]
 	}
 }
 
