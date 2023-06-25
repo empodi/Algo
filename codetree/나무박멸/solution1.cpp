@@ -93,7 +93,6 @@ int kill() {
             }
         }
     }
-    disappear();
     int ki = 0, kj = 0, maxKill = 0;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -129,6 +128,7 @@ int main() {
     while (M--) {
         grow();
         breed();
+        disappear();
         answer += kill();
     }
     cout << answer << '\n';
